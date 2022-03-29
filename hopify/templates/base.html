@@ -1,0 +1,279 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>{% block title %} amigo {% endblock title %}</title>
+    <meta name="keywords" content="Electronics,Cars,Services,Peripherals,Apprael">
+    <meta name="description" content="India's Largest Second hand products selling platform">
+    <meta name="author" content="Jenil Akoliya">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+    <!-- fevicon -->
+    <link rel="icon" href="../static/images/icon a.jpg" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css'%}">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+        media="screen">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+<!---------------------------------------Fonts----------------------------------------------------------------->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+
+        <style>
+
+            body{font-family: 'Acme', sans-serif;}
+            
+
+        </style>
+</head>
+
+
+<body>
+
+    <!-- header section start -->
+    <div class="header_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-3">
+                    <div class="logo"><a href="/"><img src="../static/images/amigo-300x120.jpg" ></a></div>
+                </div>
+                <div class="col-sm-6">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav" id="navlinkhover">
+
+
+                                {%if request.user.is_authenticated %}
+
+                                <a class="nav-item nav-link" href="/">Home</a>
+                                <a class="nav-item nav-link" href="/browseads/">Browse</a>
+                                <a class="nav-item nav-link" href="/about/">About</a>
+                                <a class="nav-item nav-link" href="/clients/">Clients</a>
+                                <a class="nav-item nav-link" href="/contact/">Contact</a>
+                                <a class="nav-item nav-link" href="/myprofile/">Hi!<b>{{user}}</b> </a>
+                                <a class="nav-item nav-link" href="/logoutuser"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                                </a>
+
+
+
+                                {% else %}
+
+                                <a class="nav-item nav-link" href="/">Home</a>
+                                <a class="nav-item nav-link" href="/browseads/">Browse</a>
+                                <a class="nav-item nav-link" href="/about/">About</a>
+                                <a class="nav-item nav-link" href="/clients/">Clients</a>
+                                <a class="nav-item nav-link" href="/contact/">Contact</a>
+                                <a class="nav-item nav-link" href="/mylogin/">Login</a>
+
+                                {% endif %}
+
+
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="search_main">
+                        <button class="submit_bt"><a href="/uploadproduct/"><span class="doctor"><img
+                                        src="../static/images/doctor-icon.png"></span>Submit ads</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header section end -->
+
+<body>
+    
+    {% block body %}
+
+    {% endblock body %}
+
+
+
+    <!-- footer section start -->
+    <div class="layout_padding footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div><a href="/"><img src="../static/images/amigo-300x120.jpg" width="250px" height="100px"></a></div>
+                    <p class="dolor_text">Browse from more than 15,000,000 adverts while new ones come on daily basis</p>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <h1 class="quick_text">Quick links</h1>
+                    <div class="chevron_arrow"><img src="../static/images/chevron-arrow.png"><a href="/signup/"><span
+                            class="padding-left">Join Us</span></a></div>
+                    <div class="chevron_arrow"><img src="../static/images/chevron-arrow.png"><a href="/mylogin/"><span
+                            class="padding-left">Log in</span></a></div>
+                    <div class="chevron_arrow"><img src="../static/images/chevron-arrow.png"><a href="/about/"><span
+                            class="padding-left">About</span></a></div>
+                    <div class="chevron_arrow"><img src="../static/images/chevron-arrow.png"><a href="/contact/"><span
+                            class="padding-left">Contact</span></a></div>
+                    <div class="chevron_arrow"><img src="../static/images/chevron-arrow.png"><a href="/clients/"><span
+                            class="padding-left">Clients</span></a></div>
+                </div>
+
+
+            
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <h1 class="subscribe_text">Newsletter</h1>
+                    <p class="ipsum_text">Subsribe us to get latest updates,news and offers</p>
+                    <form action="/subscriberemail/" method="post">
+                        {% csrf_token %}
+                    <input type="email" class="email_text" placeholder="Your Email" name="subemail" required>
+                    <button class="submit_text" style="cursor: pointer;">Submit</button>
+                </form>
+                </div>
+           
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <h1 class="quick_text">Contact Us</h1>
+                    <div class="map_flag"><img src="../static/images/map-flag.png"><span class="padding-left">C/mallorca 255
+                            Barcelona,SPAIN</span></div>
+                    <div class="dolor_text"><img src="../static/images/email-icon.png"><span
+                            class="padding-left"><a href="mailto:abc@gmail.com">abc@gmail.com</a></span></div>
+                    <div class="dolor_text"><img src="../static/images/phone-icon.png"><span
+                            class="padding-left">+34632666666</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer section end -->
+    <!-- copyright section start -->
+    <div class="copyright">
+        <p class="copyright_text">2022 All Rights Reserved. Design By  J. Akoliya
+        </p>
+    </div>
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/jquery-3.0.0.min.js"></script>
+    <script src="../static/js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="../static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../static/js/custom.js"></script>
+    <!-- javascript -->
+    <script src="../static/js/owl.carousel.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none"
+            });
+
+            $(".zoom").hover(function () {
+
+                $(this).addClass('transition');
+            }, function () {
+
+                $(this).removeClass('transition');
+            });
+        });
+
+    </script>
+
+
+    <!----------------------------------------------------aos------------------------------------------------->
+    <script>
+        AOS.init();
+      </script>
+
+
+    <!-----------------------------------------------JS FOR SIGN UP PAGE--------------------------------------->
+    <script type="text/javascript">
+        $(function () {
+          $("#btnSubmit").click(function () {
+            var password = $("#password").val();
+            var confirmPassword = $("#confirmpassword").val();
+            var username = $("#username").val();
+            if (password != confirmPassword) {
+              alert("Passwords do not match.");
+              return false;
+            }
+    
+    
+            if (password.length <= 7) {
+              alert('password must be more than 8 charactor');
+              return false;
+            }
+    
+            if (username.length < 4) {
+              alert('username must be more than 4 charactor');
+              return false;
+            }
+    
+    
+            return true;
+    
+    
+    
+          });
+        });
+      </script>
+
+    <!-----------------------------------------------JS FOR CONTACT PAGE--------------------------------------->
+
+      
+<script type="text/javascript">
+    $(function () {
+      $("#cntbtn").click(function () {
+        var name = $("#name").val();
+        var phone = $("#phone").val();
+
+        if (name.length <=4 ) {
+          alert("name must be more than 4 charactor.");
+          return false;
+        }
+
+        if (phone.length <=8 ) {
+            alert("phone must be more than 8 digits.");
+            return false;
+          }
+  
+        return true;
+  
+  
+      });
+    });
+  </script>
+
+
+
+ 
+</body>
+
+</html>

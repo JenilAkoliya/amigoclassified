@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Clients
+{% endblock title %}
+
+
+
+
+{% block body %}
+
+<!-- client section start -->
+<div class="layout_padding clients_section">
+  <div class="container">
+    <div id="client_slide" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators" style="cursor: pointer;">
+        <li data-target="#client_slide" data-slide-to="0" class="active"></li>
+        <li data-target="#client_slide" data-slide-to="1"></li>
+        <li data-target="#client_slide" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-sm-12">
+              <h1 class="promoted_text">CLIENTS <span style="border-bottom: 5px solid #4bc714;">REVIEW</span></h1>
+              <div class="client_img"><img src="../static/images/client-img.png"></div>
+              <h1 class="client_text">John</h1>
+              <p class="adiser_text">(Surat)</p>
+              <p class="long_text">One of the best... So many apps are there in the market but none is like amigo to buy
+                or sell cars or any home accessories...
+                Just lessen the ads if possible... Thank you AMIGO...
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-sm-12">
+              <h1 class="promoted_text">CLIENTS <span style="border-bottom: 5px solid #4bc714;">REVIEW</span></h1>
+              <div class="client_img"><img src="../static/images/Spanish-Girl-2.jpg"></div>
+              <h1 class="client_text">Gracia</h1>
+              <p class="adiser_text">(Delhi)</p>
+              <p class="long_text">Selling on AMIGO has always been a great experience for me.
+                I have sold many products through this app at reasonable prices which I would never have gotten through
+                other modes.
+                Overall a great app for every class of society.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-sm-12">
+              <h1 class="promoted_text">CLIENTS <span style="border-bottom: 5px solid #4bc714;">REVIEW</span></h1>
+              <div class="client_img"><img src="../static/images/jenil.jpg"></div>
+              <h1 class="client_text">Jenil</h1>
+              <p class="adiser_text">Mumbai</p>
+              <p class="long_text">Super App with no restrictions 👍 very useful for buyers and sellers.
+                Thanks, amigo….This is a useful app for selling items hassle-free... Really like the site
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- client section end -->
+
+
+{% endblock body %}

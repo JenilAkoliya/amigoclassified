@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% load social_share %}
+
+{% block title %}
+Product details
+{% endblock title %}
+
+
+
+
+{% block body %}
+
+<!-- {{productdetail}} -->
+
+
+<div class="container-fluid">
+    <div class="row mb-5">
+        {% for i in productdetail %}
+
+        <div class="col-sm-6">
+            <img src="{{i.image.url}}" alt="invalid">
+        </div>
+
+
+        <div class="col-sm-6">
+            <table>
+                <th>
+                    <h1 style="border-bottom:5px solid rgb(61, 173, 61);margin-bottom:10%;">Product Details</h1>
+                </th>
+
+                <tr>
+                    <td> product name : </td>
+                    <td>{{i.name}}</td>
+                </tr>
+                <tr>
+                    <td> Category : </td>
+                    <td>{{i.category}}</td>
+                </tr>
+                <tr>
+                    <td> Description : </td>
+                    <td>{{i.description}}</td>
+                </tr>
+                <tr>
+                    <td> Price : </td>
+                    <td>{{i.price}} ₹</td>
+                </tr>
+                <tr>
+                    <td> address : </td>
+                    <td>{{i.address}}</td>
+                </tr>
+                <tr>
+                    <td> mobile no : </td>
+                    <td>{{i.mobileno}}</td>
+                </tr>
+                <tr>
+                    <td> Send a message to owner </td>
+                    <td><a class="whatsappmini" href="https://wa.me/{{i.mobileno}}?text=Im%20interested%20in%20Beer%20JENIL%20"
+                            target="_blank">
+                            <img class="myfloatmini" src="../static/images/whatsapp.png" alt="whatsapp">
+                        </a>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td>
+                        <tr>
+                            <td> Share it on  ↓ {% post_to_facebook object_or_url "<p style='color: blue;'>facebook</p>" %}
+                            {% post_to_whatsapp object_or_url "<p style='color:rgb(30, 180, 62);'>Whatsapp</p>" %}</td>
+                        </tr>
+                    </td>
+                </tr>
+               
+        </div>
+        </table>
+
+        {% endfor %}
+
+
+    </div>
+    <!--------------row ends----------->
+</div>
+<!--------------col ends----------->
+
+
+
+
+{% endblock body %}

@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+
+<title>{% block title %} amigo | Home {% endblock title %}</title>
+
+
+
+
+{% block body %}
+
+<!-- banner section start -->
+<div class="layout_padding banner_section"data-aos="fade-right">
+	{% include 'message.html'%}
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1 class="banner_taital">All You Need Is Here & Classified</h1>
+				<p class="browse_text">Browse from more than 15,000,000 adverts while new ones come on daily basis
+				</p>
+				<div class="banner_bt">
+					<button class="read_bt"><a href="/about/">Read More</a></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- banner section end -->
+<!-- search box start -->
+<div class="container" data-aos="fade-right">
+	<div class="search_box">
+
+
+		<form action="/searchproduct/" method="post">
+			{% csrf_token %}
+
+			<div class="row">
+
+				<div class="col-sm-9">
+					<div class="form-group">
+						<input type="text" class="email_boton" placeholder="Search for e.g : iphone | mumbai | used"
+							name="ename">
+					</div>
+				</div>
+
+
+				<div class="col-sm-3">
+					<div class="form-group">
+						<button type="submit" class="search_bt" style="cursor:pointer">Search</button>
+					</div>
+				</div>
+
+		</form>
+
+		<div class="fashion_menu">
+
+			{% for j in category %}
+
+			<ul>
+				<li><a href="{% url 'category' j.id %}">{{j.name}}</a></li>
+			</ul>
+			{% endfor %}
+
+
+		</div>
+	</div>
+</div>
+</div>
+<!-- search box end -->
+<!-- section PROMOTED start -->
+<div class=" layout_padding promoted_sectipon"data-aos="zoom-in">
+	<div class="container"> 
+		<h1 class="promoted_text">PROMOTED <span style="border-bottom: 5px solid #4bc714;">ADS</span></h1>
+
+
+		<div class="images_main">
+			<div class="row">
+				{% for j in category %}
+
+
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="images"><img src="{{ j.image.url }}" style="height:200px;width:100%;"></div>
+					<button class="promoted_bt">{{j.pricing}} ₹</button>
+					<div class="eye-icon"><img src="../static/images/eye-icon.png"><span class="like-icon"><img
+								src="../static/images/like-icon.png"></span></div>
+					<div class="numbar_text">30<span class="like-icon">01</span></div>
+					<button class="mobile_bt mb-5"><a href="{% url 'category' j.id %}">{{j.name}}</a></button>
+				</div>
+
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- section PROMOTED end -->
+<!-- section POPULAR STORES start -->
+<div class="layout_padding popular_section"data-aos="fade-left">
+	<div class="container">
+		<h1 class="popular_taital">POPULAR <span style="border-bottom: 5px solid #4bc714;">STORES</span></h1>
+		<div id="main_slider" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="popular_section_2">
+						<div class="slider_img"><img src="../static/images/img-5.png" style="max-width: 100%;">
+						</div>
+						<h2 class="electronic_text">Electronic shop</h2>
+						<p class="contrary_text">Our Electronics hub
+							where you can find all type of electronics devices and gadgets with assuarance of amigo
+						</p>
+						<button class="view_bt"><a href="/showproduct/">VIEW ADS</a></button>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="popular_section_2">
+						<div class="slider_img"><img src="../static/images/motorcycles-store.jpg"
+								style="max-width: 100%;border-radius:40px">
+						</div>
+						<h2 class="electronic_text">Moto Garage</h2>
+						<p class="contrary_text">Visit our new venture of "vamos en moto" ,
+							the place where every mens bike fantasy overs.
+						</p>
+						<button class="view_bt"><a href="/showproduct/">VIEW ADS</a></button>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="popular_section_2">
+						<div class="slider_img"><img src="../static/images/laptopservicestore.jpg"
+								style="max-width: 100%;border-radius:40px">
+						</div>
+						<h2 class="electronic_text">laptop Services</h2>
+						<p class="contrary_text">we are happy to serve you 1st laptop service
+							absolutely free without boundry of brand,model and bill in our
+							amigotechnico store</p>
+						<button class="view_bt"><a href="/showproduct/">VIEW ADS</a></button>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+				<i class="fa fa-angle-left"></i>
+			</a>
+			<a class="carousel-control-next" href="#main_slider" role="button" data-slide="prev">
+				<i class="fa fa-angle-right"></i>
+			</a>
+
+		</div>
+	</div>
+</div>
+<!-- section POPULAR STORES end -->
+<!-- about section start -->
+<div class="layout_padding about_section" data-aos="fade-up">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1 class="about_taital">About Our Classified ads</h1>
+				<p class="lorem_text">It is a long established fact that a reader will be distracted by the readable
+					content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+					more-or-less normal distribution of letters, as opposed to</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- about section end -->
+<!-- client section start -->
+<div class="layout_padding clients_section" data-aos="zoom-in-up">
+	<div class="container">
+		<div id="client_slide" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators" style="cursor: pointer;">
+				<li data-target="#client_slide" data-slide-to="0" class="active"></li>
+				<li data-target="#client_slide" data-slide-to="1"></li>
+				<li data-target="#client_slide" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="row">
+						<div class="col-sm-12">
+							<h1 class="promoted_text">CLIENTS <span
+									style="border-bottom: 5px solid #4bc714;">REVIEW</span></h1>
+							<div class="client_img"><img src="../static/images/client-img.png"></div>
+							<h1 class="client_text">John</h1>
+							<p class="adiser_text">(Surat)</p>
+							<p class="long_text">One of the best... So many apps are there in the market but none is
+								like amigo to buy or sell cars or any home accessories...
+								Just lessen the ads if possible... Thank you AMIGO...
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row">
+						<div class="col-sm-12">
+							<h1 class="promoted_text">CLIENTS <span
+									style="border-bottom: 5px solid #4bc714;">REVIEW</span></h1>
+							<div class="client_img"><img src="../static/images/Spanish-Girl-2.jpg"></div>
+							<h1 class="client_text">Gracia</h1>
+							<p class="adiser_text">(Delhi)</p>
+							<p class="long_text">Selling on AMIGO has always been a great experience for me.
+								I have sold many products through this app at reasonable prices which I would never have
+								gotten through other modes.
+								Overall a great app for every class of society.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row">
+						<div class="col-sm-12">
+							<h1 class="promoted_text">CLIENTS <span
+									style="border-bottom: 5px solid #4bc714;">REVIEW</span></h1>
+							<div class="client_img"><img src="../static/images/jenil.jpg"></div>
+							<h1 class="client_text">Jenil</h1>
+							<p class="adiser_text">Mumbai</p>
+							<p class="long_text">Super App with no restrictions 👍 very useful for buyers and sellers.
+								Thanks, amigo….This is a useful app for selling items hassle-free... Really like the
+								site
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- client section end -->
+<!-- contact section start -->
+<div class="contact_section layout_padding">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="input_main">
+					<div class="container">
+						<form action="/action_page.php">
+							<div class="form-group">
+								<input type="text" class="email-bt" placeholder="Your Name" name="Name">
+							</div>
+							<div class="form-group">
+								<input type="text" class="email-bt" placeholder="Email" name="Email">
+							</div>
+							<div class="form-group">
+								<input type="text" class="email-bt" placeholder="Phone" name="Email">
+							</div>
+							<div class="form-group">
+								<textarea class="massage-bt" placeholder="Massage" rows="5" id="comment"
+									name="text"></textarea>
+							</div>
+							<input type="submit" class="submit_text" style="cursor: pointer;">
+
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="map-responsive">
+					<iframe
+						src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France"
+						width="600" height="450" frameborder="0" style="border:0; width: 100%;"
+						allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- contact section end -->
+
+{% endblock body %}

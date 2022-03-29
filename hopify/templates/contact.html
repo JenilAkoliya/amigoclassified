@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Contact
+{% endblock title %}
+
+{% block body %}
+
+
+<!-- contact section start -->
+<div class="contact_section layout_padding">
+
+  {% include 'message.html' %}
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input_main">
+          <div class="container">
+            <form action="/contact/" method="post">
+              {% csrf_token %}
+
+              <div class="form-group">
+                <input type="text" class="email-bt" placeholder="Your Name" id="name" name="name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="email-bt" placeholder="Email" name="email"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required>
+              </div>
+              <div class="form-group">
+                <input type="number" class="email-bt" placeholder="Phone" id="phone" name="phone"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+              </div>
+              <div class="form-group">
+                <textarea class="massage-bt" placeholder="Message" rows="5" id="comment" name="message"></textarea>
+              </div>
+              <input type="submit" class="submit_text" style="cursor: pointer" id="cntbtn">
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="map-responsive">
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France"
+            width="600" height="450" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- contact section end -->
+
+<!-- whatsapp api------ -->
+<a class="whatsapp" href="https://wa.me/918097024701?text=Im%20interested%20in%20Beer%20JENIL%20" target="_blank">
+  <img class="myfloat" src="../static/images/whatsapp.png" alt="whatsapp">
+</a>
+<!---------end of whats app api----->
+
+
+
+{% endblock body%}

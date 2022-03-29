@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+
+<!-- {{userdata}} -->
+
+<div class="row">
+
+
+
+  <!-- <div class="col-4">
+    <img src="{{request.user.userprofile.image.url}}" height="85%" width="90%" alt="invalid">
+  </div> -->
+<div class="col-12">
+  {% include 'message.html'%}
+</div>
+
+
+</div><!---------------row ends--------------------------------->
+
+
+<div class="row">
+
+ <div class="col-4 ml-5 mt-3 ">
+    <img src="{{user.editprofile.image.url}}" style="border:5px solid green;border-radius:20px; " height="80%" width="60%" alt="invalid">
+  </div>
+
+  <div class="col-6 mt-3">
+    <table class="table table-hover bg-dark text-light">
+      <tbody>
+
+        {% for i in userdata %}
+
+        <tr>
+          <td scope="col">Username</td>
+          <td>{{request.user.username}}</td>
+        </tr>
+
+
+
+        <!-- <tr>
+        <td scope="col">USER ID</td>
+        <td>{{i.id}}</td>
+        </tr> -->
+
+
+        <tr>
+        <td scope="col">Firstname</td>
+        <td>{{request.user.first_name}}</td>
+        </tr>
+
+
+        <tr>
+        <td scope="col">Lastname</td>
+        <td>{{request.user.last_name}}</td>
+        </tr>
+       
+        <tr>
+        <td scope="col">Email</td>
+        <td>{{i.email}}</td>
+        </tr>
+
+        <tr>
+          <td scope="col">Phone</td>
+          <td>{{user.editprofile.phone}}</td>
+          </tr>
+
+
+        {% endfor %}
+
+
+
+
+
+        
+
+
+      </tbody>
+    </table>
+
+<!-- 
+
+    
+    <form action="" method="post" enctype="multipart/form-data">
+
+      <h2>Edit a details</h2>
+        {% csrf_token %}   
+       {{u_form.as_p}}
+       
+       {{p_form.as_p}}
+      <input type="submit" id="btnSubmit"  value ="UPDATE" >
+       </form>
+     -->
+    
+    
+
+    <div class="text-center mt-5">
+      <button type="button" class="btn btn-dark"><a href="/editprofile" class="text-center text-light">Add Phone or Edit profile
+          </a></button>
+    </div>
+
+
+
+
+
+  </div>
+
+</div>
+<!-----ROW CLASS ENDS------------------>
+
+
+
+{% endblock body %}
